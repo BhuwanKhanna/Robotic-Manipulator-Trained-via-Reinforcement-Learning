@@ -8,10 +8,10 @@ def train():
     os.makedirs(log_dir, exist_ok=True)
     os.makedirs("models", exist_ok=True)
     
-    # Environment with DIRECT mode (no GUI for faster training)
+    # Environment with DIRECT mode 
     env = RoboticArmEnv(render_mode="direct")
     
-    # Monitor wraps the env and automatically exports rewards/lengths to a CSV file in log_dir
+    #  wraps the env and automatically exports rewards/lengths to a CSV file in log_dir
     env = Monitor(env, log_dir)
     
     model = PPO("MlpPolicy", env, verbose=1)
